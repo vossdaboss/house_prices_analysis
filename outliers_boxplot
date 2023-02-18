@@ -1,0 +1,24 @@
+import numpy as np # linear algebra
+import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+import seaborn as sns
+import matplotlib.pyplot as plt
+from scipy.stats import spearmanr
+
+df = pd.read_csv('data_archive/train.csv')
+
+# Select the 'GrLivArea' and 'SalePrice' columns from the dataframe
+def boxplot(x, y, **kwargs):
+    sns.boxplot(x=x, y=y)
+    x=plt.xticks(rotation=90) 
+
+# Melt the 'MSZoning' column in the dataframe into a long format, with 'SalePrice' as the identifier variable
+pd = pd.melt(df, id_vars='SalePrice', value_vars='MSZoning')
+
+# Create a seaborn FacetGrid object with one column for each level of the 'MSZoning' variable
+g = sns.FacetGrid(pd, col="variable", col_wrap=2, sharex=False, sharey=False, height=5)
+
+# Map a box plot onto each column of the FacetGrid, with 'value' as the x-axis variable and 'SalePrice' as the y-axis variable
+g = g.map(boxplot, "value", "SalePrice")
+
+# Show the resulting plot
+plt.show()
