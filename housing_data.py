@@ -5,6 +5,6 @@ import matplotlib.pyplot as plt
 from scipy.stats import spearmanr
 
 import os
-for dirname, _, filenames in os.walk('data_archive'):
+for dirname, _, filenames in os.walk('data_archive/house_prices_dataset'):
     for filename in filenames:
         print(os.path.join(dirname, filename))

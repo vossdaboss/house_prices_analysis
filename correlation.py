@@ -4,7 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from scipy.stats import spearmanr
 
-df = pd.read_csv('data_archive/train.csv')
+df = pd.read_csv('data_archive/house_prices_dataset/train.csv')
 
 # Select the columns with numeric data types from the 'df' dataframe
 numeric_data = df.select_dtypes(include=[np.number])

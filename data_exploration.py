@@ -8,7 +8,7 @@ from scipy.stats import spearmanr
 # to help us understand the data better and make better decisions
 
 # Read the data 
-df = pd.read_csv('data_archive/train.csv')
+df = pd.read_csv('data_archive/house_prices_dataset/train.csv')
 
 # Calculate the percentage of missing values in each column of the dataframe
 missing_values = df.isnull().sum() / len(df)

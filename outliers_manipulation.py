@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from scipy.stats import spearmanr
 
 # We will use the data set to find and remove outliers and df has 1460 rows and 81 columns
-df = pd.read_csv('data_archive/train.csv')
+df = pd.read_csv('data_archive/house_prices_dataset/train.csv')
 
 # Select the 'GrLivArea' and 'SalePrice' columns from the dataframe
 df[["GrLivArea", "SalePrice"]]
